@@ -3,101 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WILD COMPANY | Official Site</title>
+    <title>WILD COMPANY</title>
     <style>
-        /* Simple Dark UI */
-        body {
-            background-color: #0b0b0b;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Modern Brutalist / Industrial Reset */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            line-height: 1.6;
+            padding: 0;
         }
 
-        .container {
-            max-width: 800px;
-            padding: 100px 20px;
-            text-align: center;
+        body {
+            background-color: #050505;
+            color: #d1d1d1;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Subtle industrial grid background */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Layout */
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 80px 0;
+            border-bottom: 2px solid #ff4a00;
+            margin-bottom: 60px;
+            position: relative;
         }
 
         h1 {
-            font-size: 4rem;
-            letter-spacing: 10px;
-            color: #ff4500; /* Industrial Orange */
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: #ffffff;
             text-transform: uppercase;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(255, 69, 0, 0.3);
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 1rem;
         }
 
-        .tagline {
+        .accent {
+            color: #ff4a00; /* Safety Orange */
+        }
+
+        .subtitle {
             font-size: 1.2rem;
             color: #888;
-            margin-bottom: 50px;
+            font-weight: 500;
+            max-width: 600px;
         }
 
-        .content {
-            background: #151515;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            text-align: left;
+        /* Game Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 80px;
         }
 
-        hr {
-            border: 0;
-            border-top: 1px solid #333;
-            margin: 50px 0;
-        }
-
-        .privacy-section {
-            font-size: 0.85rem;
-            color: #777;
-            text-align: left;
-            padding-bottom: 100px;
-        }
-
-        h2 {
-            color: #fff;
+        .info-block h2 {
             font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        strong {
+        .info-block p {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+
+        /* Legal / Privacy Section */
+        .legal-section {
+            background-color: #0a0a0a;
+            border: 1px solid #222;
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .legal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .legal-header h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .last-updated {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .policy-content {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .policy-content h3 {
             color: #bbb;
+            font-size: 1rem;
+            margin: 25px 0 10px 0;
+        }
+
+        .policy-content p {
+            margin-bottom: 15px;
+        }
+
+        .policy-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #444;
+            padding-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>WILD COMPANY</h1>
-        <p class="tagline">Work Hard. Die Fast. Meet the Quota.</p>
+    <div class="wrapper">
+        <header>
+            <h1>WILD <span class="accent">COMPANY</span></h1>
+            <p class="subtitle">Descend. Collect. Survive. Meet the quota or stay behind.</p>
+        </header>
 
-        <div class="content">
-            <h2>The Mission</h2>
-            <p>Welcome to the team. You are a contracted worker for The Company. Your job is to scavenge industrial moons for scrap to meet the profit quota. Use your earnings to upgrade your gear and travel to more dangerous moons. Just remember: communication is key, and the quota is non-negotiable.</p>
+        <div class="info-grid">
+            <div class="info-block">
+                <h2>The Directive</h2>
+                <p>Contracted by the Corporation, your objective is simple: navigate abandoned industrial installations, secure high-value scrap, and return to extraction before local hazards mobilize.</p>
+            </div>
+            <div class="info-block">
+                <h2>Cooperative Survival</h2>
+                <p>Coordination is your only lifeline. Utilize proximity comms to guide your crew, pool your resources for essential gear, and ensure the profit quota is met at all costs.</p>
+            </div>
         </div>
 
-        <hr>
-
-        <div class="privacy-section">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date: April 2026</strong></p>
+        <div class="legal-section">
+            <div class="legal-header">
+                <h2>Privacy Policy</h2>
+                <span class="last-updated">Effective Date: April 2026</span>
+            </div>
             
-            <p>WILD COMPANY ("the Game") is committed to protecting user privacy. This policy outlines our handling of information for a safe gaming experience.</p>
+            <div class="policy-content">
+                <p>This Privacy Policy applies to WILD COMPANY ("the Application"). We respect your privacy and are committed to protecting it through our compliance with this policy. We designed this Application with data minimization as a core principle.</p>
 
-            <p><strong>1. Data Collection:</strong> We do not collect personal identifiable information (PII) such as names, addresses, or phone numbers. The Game may collect non-identifiable technical data (e.g., device model, OS version) solely for performance optimization and bug fixing.</p>
+                <h3>1. Information We Do Not Collect</h3>
+                <p>We do not collect, store, or process any Personally Identifiable Information (PII). We do not require you to create an account with us, and we do not request your name, email address, phone number, or physical address.</p>
 
-            <p><strong>2. Gameplay Data:</strong> Any save data, including scrap collected and equipment purchased, is stored locally on your device or via your platform's secure cloud storage. We do not host this data on external private servers.</p>
+                <h3>2. Information Collected by the Platform</h3>
+                <p>When you use the Application via third-party storefronts or hardware (such as Meta Quest or Steam), those platforms may collect data according to their own privacy policies. This may include:</p>
+                <ul>
+                    <li>Device identifiers and OS versions.</li>
+                    <li>Crash logs and performance data.</li>
+                    <li>Multiplayer networking data (e.g., voice chat routing via platform APIs).</li>
+                </ul>
+                <p>We only access anonymized, aggregated telemetry data provided by these platforms strictly for bug fixing and optimizing Application performance.</p>
 
-            <p><strong>3. Third-Party Services:</strong> The Game may use platform-specific services (like Meta or Steam) for multiplayer connectivity and achievements. Please refer to their respective privacy policies for how they handle account data.</p>
+                <h3>3. Local Data Storage</h3>
+                <p>All gameplay data, including save files, settings, and progress, is stored locally on your device or utilizing your chosen platform's secure cloud-save feature. We do not operate proprietary servers to host or backup your personal save data.</p>
 
-            <p><strong>4. Children’s Privacy:</strong> The Game does not knowingly collect data from children. We prioritize a secure environment for all players.</p>
+                <h3>4. Voice Communications</h3>
+                <p>WILD COMPANY features proximity-based voice chat. Voice data is processed in real-time for gameplay purposes. Voice streams are not recorded, stored, or transcribed by us.</p>
 
-            <p><strong>5. Consent:</strong> By playing WILD COMPANY, you agree to the terms outlined in this policy. For questions regarding privacy, please contact our support via the distribution platform.</p>
+                <h3>5. Children's Privacy</h3>
+                <p>This Application does not knowingly collect any personal data from children under the age of 13. If you are a parent or guardian and believe your child has provided personal data to the platform hosting our Application, please contact the platform directly to manage those permissions.</p>
+
+                <h3>6. Changes to This Policy</h3>
+                <p>We may update this policy periodically to reflect changes in our practices or platform requirements. The "Effective Date" at the top will indicate when the latest changes were made.</p>
+            </div>
         </div>
+
+        <footer>
+            &copy; 2026 WILD COMPANY. All rights reserved.
+        </footer>
     </div>
 
 </body>
